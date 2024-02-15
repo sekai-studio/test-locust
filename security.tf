@@ -22,6 +22,14 @@ resource "aws_security_group" "loadtest" {
   }
 
   ingress {
+    description = "HTTP"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "TCP"
+    cidr_blocks = "10.10.0.0/16"
+  }
+
+  ingress {
     description = "HTTPS"
     from_port   = 443
     to_port     = 443
