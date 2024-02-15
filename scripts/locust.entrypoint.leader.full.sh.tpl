@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo yum update -y
-sudo yum install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash htop
+sudo yum install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzip bash htop python3-pip --skip-broken
 
 # LOCUST
 sudo dnf install python3.11 python3.11-pip -y
