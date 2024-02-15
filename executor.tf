@@ -87,6 +87,7 @@ resource "null_resource" "setup_nodes" {
       "echo SETUP NODES ${count.index}",
       "echo '${local.node_entrypoint}'",
       "cd ${var.loadtest_dir_destination}",
+      "sudo pip3 install -r requirements.txt",
       "${local.node_entrypoint}",
       "sleep 1"
     ]
@@ -146,6 +147,7 @@ resource "null_resource" "executor" {
       "echo DIR: ${var.loadtest_dir_destination}",
       "cd ${var.loadtest_dir_destination}",
       "echo '${local.entrypoint}'",
+      "sudo pip3 install -r requirements.txt",
       "${local.entrypoint}",
       "sleep 1"
 
